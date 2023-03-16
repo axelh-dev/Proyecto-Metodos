@@ -2,7 +2,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    min-height: 100%;
+    min-width: 100%;
 }
 .seccion-inputs{
     display: flex;
@@ -19,12 +20,16 @@
     height: 4rem;
     background: #1d3557;
 }
+.nav-bar{
+    height: 3rem;
+}    
 .nav-bar a{
+    font-size: 2rem;
     color: white;
 }
 @media only screen and (max-width: 489px) {
     /* Reducir tamaño de texto para pantallas menores a 420px */
     .nav-bar a {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
     }
   }
