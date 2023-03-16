@@ -1,0 +1,30 @@
+.bisection-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.seccion-inputs{
+    display: flex;
+    flex-direction: row;
+}
+.seccion-inputs input{
+    width: 70px;
+}
+.nav-bar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 4rem;
+    background: #1d3557;
+}
+.nav-bar a{
+    color: white;
+}
+@media only screen and (max-width: 489px) {
+    /* Reducir tamaño de texto para pantallas menores a 420px */
+    .nav-bar a {
+      font-size: 1.2rem;
+    }
+  }
