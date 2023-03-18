@@ -25,13 +25,11 @@ document
         let xr = (a + b) / 2;
         /* Sustituimos recurrencia en nuestra ecuacion */
         let fxr = math.evaluate(funcion, { x: xr });
-        let iteracion = 0;
-        let toll = 0;
+        let iteracion = 1;
 
         /* creamos un ciclo que va a calcular cada iteracion y la va a guardar en un arreglo */
-
         while (Math.abs(fxr) > tolerance) {
-          resultados.push([iteracion, a, b, fa, fb, xr, fxr, toll]); // guardamos los resultados
+          resultados.push([iteracion, a, b, fa, fb, xr, fxr,toll]); // guardamos los resultados
 
           if (fa * fxr < 0) {
             b = xr;
@@ -40,20 +38,18 @@ document
             a = xr;
             fa = fxr;
           }
-          let toll;
-          if (i > 0) {
-            // Verifica que hay iteraciones anteriores
-            var resultadoAnterior = resultados[i - 1];
-            toleranciaActual =
-              Math.abs(
-                (resultadoActual - resultadoAnterior) / resultadoActual
-              ) * 100;
+
+          var toll;
+          /* Verificamos si hay iteraciones anteriones */  
+          if (iteracion > 0) {
+            var resultadoAnterior = resultados[iteracion - 1];
+            toll = Math.abs((toll - resultadoAnterior));
           }
           xr = (a + b) / 2;
           fxr = math.evaluate(funcion, { x: xr });
           iteracion++;
         }
-        resultados.push([iteracion, a, b, xr, fxr]); // guardamos el resultado final
+        resultados.push([iteracion, a, b, fa, fb, xr, fxr, toll]); // guardamos el resultado final
         return resultados;
       }
     }
