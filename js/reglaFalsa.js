@@ -1,5 +1,5 @@
 document
-  .getElementById("bisection-form")
+  .getElementById("regla-falsa-form")
   .addEventListener("submit", function (event) {
     event.preventDefault();
 
@@ -10,7 +10,7 @@ document
     const tolerance = parseFloat(document.getElementById("tolerance").value);
 
     /* Llamamos nuestro metodo y le pasamos los valores que vienen de los imputs */
-    let resultados = biseccion(equation, a, b, tolerance);
+    let resultados = rgFalsa(equation, a, b, tolerance);
 
     // Aca limpiamos la tabla antes de mandar nuevos valores a ella 
     const tabla = document.getElementById("tabla-resultados");
@@ -37,7 +37,7 @@ document
     });
 
     // Definir la ecuacion a resolver utilizando math.js
-    function biseccion(funcion, a, b, tolerance) {
+    function rgFalsa(funcion, a, b, tolerance) {
       let resultados = [];
       let fa = math.evaluate(equation, { x: a });
       fa.toFixed(6);
@@ -49,7 +49,7 @@ document
         alert("La función no cambia de signo en el intervalo dado");
       } else {
         /* Calculamos la recurrencia */
-        let xr = (a + b) / 2;
+        let xr = (a*fb - b*fa) / (fb - fa);;
         xr.toFixed(6);
 
         /* Sustituimos recurrencia en nuestra ecuacion */
@@ -85,7 +85,7 @@ document
 
           xrAnterior = xr; // actualizamos xrAnterior con el valor actual de xr
 
-          xr = (a + b) / 2;
+          xr = (a*fb - b*fa) / (fb - fa);;
           fxr = math.evaluate(funcion, { x: xr });
           fxr.toFixed(6);
 

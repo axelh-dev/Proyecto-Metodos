@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Método de bisección</title>
-  <link rel="stylesheet" href="../css/style-mnb.css">
+  <title>Metodo de Regla falsa</title>
+  <link rel="stylesheet" href="../css/glovals.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.7.0/math.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
@@ -38,8 +38,8 @@
     <a href="../index.html" class="title d-flex justify-content-center text-decoration-none text-light">Proyecto
       final de Metodos Numericos</a>
   </header>
-  <h3 class="d-flex justify-content-center mt-5">Metodo de Bisección</h3>
-  <form id="bisection-form" class="bisection-form">
+  <h3 class="d-flex justify-content-center mt-5">Metodo de Regla falsa</h3>
+  <form id="regla-falsa-form" class="intro-mn">
     <label for="equation" class="mt-2">Ecuación:
       <input type="text" id="equation" name="equation"><br>
     </label>
@@ -57,16 +57,16 @@
     <button type="submit" class="btn btn-primary mt-2">Calcular</button>
   </form>
   <div id="results">
-    <table id="tabla-resultados" class="table mt-2 table-striped table-hover">
+    <table id="tabla-resultados" class="table mt-2 table-striped table-hover mb-5">
       <thead>
         <tr>
           <th scope="col">Iteración</th>
           <th scope="col">a</th>
           <th scope="col">b</th>
-          <th scope="col">fa</th>
-          <th scope="col">fb</th>
+          <th scope="col">f(a)</th>
+          <th scope="col">f(b)</th> 
           <th scope="col">xr</th>
-          <th scope="col">fxr</th>
+          <th scope="col">f(xr)</th>
           <th scope="col">Tolerancia</th>
         </tr>
       </thead>
@@ -77,7 +77,7 @@
   </div>
 
 </body>
-<script src="../js/bisection.js"></script>
+<script src="../js/reglaFalsa.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 
