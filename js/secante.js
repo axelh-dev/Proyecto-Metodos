@@ -45,19 +45,36 @@ document
       /* Calculamos la recurrencia */
       let xr = xi - (fxi * (xo - xi)) / (fxo - fxi);
       /* Sustituimos recurrencia en nuestra ecuacion */
+      let fxr = math.evaluate(funcion, { x: xr });
 
       let iteracion = 1;
       let toll = 0;
       /* creamos un ciclo que va a calcular cada iteracion y la va a guardar en un arreglo */
       let xrAnterior = 0;
       while (Math.abs(fxr) > tolerance) {
-        resultados.push([iteracion, xo, xi, fxo, fxi, xr, toll]); // guardamos los resultados
+        resultados.push([
+          iteracion,
+          xo.toFixed(6),
+          xi.toFixed(6),
+          fxo.toFixed(6),
+          fxi.toFixed(6),
+          xr.toFixed(6),
+          toll.toFixed(6),
+        ]); // guardamos los resultados
+
+        // Actualizamos los nuevos valores
+        xo = xi;
+        xi = xr;
 
         xrAnterior = xr; // actualizamos xrAnterior con el valor actual de xr
 
-        xr = (a + b) / 2;
+        fxo = math.evaluate(funcion, { x: xo });
+
+        fxi = math.evaluate(funcion, { x: xi });
+
         fxr = math.evaluate(funcion, { x: xr });
-        fxr;
+
+        xr = xi - (fxi * (xo - xi)) / (fxo - fxi);
 
         iteracion++;
 
@@ -65,7 +82,17 @@ document
         toll = diffXr; // actualizamos la tolerancia con la diferencia de xr
         toll;
       }
-      resultados.push([iteracion, a, b, fa, fb, xr, fxr, toll]); // guardamos el resultado final
+      resultados.push([
+        iteracion,
+        xo.toFixed(6),
+        xi.toFixed(6),
+        fxo.toFixed(6),
+        fxi.toFixed(6),
+        xr.toFixed(6),
+        toll.toFixed(6),
+      ]); // guardamos los resultados
+
+
       return resultados;
     }
   });
