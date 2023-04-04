@@ -2,7 +2,7 @@ document
   .getElementById("regla-falsa-form")
   .addEventListener("submit", function (event) {
     event.preventDefault();
-
+ 
     // Obtener los valores de los campos del formulario
     const equation = document.getElementById("equation").value;
     const a = parseFloat(document.getElementById("a").value);
@@ -18,7 +18,7 @@ document
     const numFilas = filas.length;
     for (let i = numFilas - 1; i > 0; i--) {
       tabla.deleteRow(i);
-    }
+    } 
 
     const tablaResultados = document.getElementById("tabla-resultados");
 
@@ -39,10 +39,10 @@ document
     // Definir la ecuacion a resolver utilizando math.js
     function rgFalsa(funcion, a, b, tolerance) {
       let resultados = [];
-      let fa = math.evaluate(equation, { x: a });
+      let fa = math.evaluate(funcion, { x: a });
       fa.toFixed(6);
 
-      let fb = math.evaluate(equation, { x: b });
+      let fb = math.evaluate(funcion, { x: b });
       fb.toFixed(6);
 
       if (fa * fb >= 0) {
