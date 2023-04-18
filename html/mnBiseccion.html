@@ -15,7 +15,6 @@
       max-width: 90%;
       margin: auto;
       /* Centrar la tabla horizontalmente */
-      border-collapse: collapse;
       /* Combinar bordes de celdas adyacentes */
     }
 
@@ -43,17 +42,38 @@
     </label>
     <div class="seccion-inputs mt-2">
       <label for="a" class="">Intervalo 1:
-        <input type="number" id="a" name="a"><br>
+        <input type="text" pattern="[0-9]+(\.[0-9]+)?" id="a" name="a"><br>
       </label>
       <label for="b" class="ms-2">Intervalo 2:
-        <input type="number" id="b" name="b"><br>
+        <input type="text" pattern="[0-9]+(\.[0-9]+)?" id="b" name="b"><br>
       </label>
     </div>
     <label for="tolerance" class="mt-3">Tolerancia:
-      <input type="number" id="tolerance" name="tolerance" step="0.000001" min="0.000001" max="0.001"><br>
+      <input type="text" pattern="[0-9]+(\.[0-9]+)?" id="tolerance" name="tolerance" step="0.000001" min="0.000001" max="0.001"><br>
     </label>
     <button type="submit" class="btn btn-primary mt-2">Calcular</button>
   </form>
+
+  <div class="modal fade" id="miModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Mensaje</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          La funcion no cambia de signo en el Intervalo dado
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+
   <div id="results">
     <table id="tabla-resultados" class="table mt-2 table-striped table-hover mb-5">
       <thead>

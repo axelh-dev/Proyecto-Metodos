@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método de Newton</title>
+    <link rel="stylesheet" href="../css/glovals.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.7.0/math.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <style>
+        .table {
+            max-width: 90%;
+            margin: auto;
+            /* Centrar la tabla horizontalmente */
+            border-collapse: collapse;
+            /* Combinar bordes de celdas adyacentes */
+        }
+
+        .table th,
+        .table td {
+            /* Agregar bordes a las celdas */
+            padding: 8px;
+            /* Añadir espacio de relleno */
+
+
+            text-align: center;
+            /* Centrar el contenido de las celdas */
+        }
+    </style>
+</head>
+
+<body>
+    <header class="nav-bar">
+        <a href="../index.html" class="title d-flex justify-content-center text-decoration-none text-light">Proyecto
+            final de Método Numericos</a>
+    </header>
+    <h3 class="d-flex justify-content-center mt-5">Método de Newton
+    </h3>
+    <form id="newtonMJ-form" class="intro-mn">
+        <label for="equation" class="mt-2">Ecuación:
+            <input type="text" id="equation" name="equation"><br>
+        </label>
+        <h5 class="text-center">Rango de valores</h5>
+
+        <div class="seccion-inputs">
+
+            <label for="valor1" class="">Valor inicio:
+                <input type="text" pattern="[0-9]+(\.[0-9]+)?" id="valor1" name="valor1"><br>
+            </label>
+
+            <label for="valor2" class="ms-2">Valor final:
+                <input type="text" pattern="[0-9]+(\.[0-9]+)?" id="valor2" name="valor2"><br>
+            </label>
+
+        </div>
+        <label for="tolerance" class="mt-2">Tolerancia:
+            <input type="text" pattern="[0-9]+(\.[0-9]+)?" id="tolerance" name="tolerance" step="0.000001" min="0.000001" max="0.001"><br>
+        </label>
+        <button type="submit" class="btn btn-primary mt-2">Calcular</button>
+
+    </form>
+    <div id="results">
+        <table id="tabla-resultados" class="table mt-2 table-striped table-hover mb-5">
+            <thead>
+                <tr>
+                    <th scope="col">Iteración</th>
+                    <th scope="col">xi</th>
+                    <th scope="col">f(xi)</th>
+                    <th scope="col">f'(xi)</th>
+                    <th scope="col">Recurrencia</th>
+                    <th scope="col">Tolerancia</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+
+    </div>
+
+</body>
+<script src="../js/newtonMj.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+
+</html>

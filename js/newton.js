@@ -71,6 +71,9 @@ document
           toll.toFixed(6),
         ]); // guardamos los resultados
 
+        if(iteracion > 15){
+          break;
+        }
         xi = xr;
 
         recAnterior = xr; // actualizamos xrAnterior con el valor actual de xr

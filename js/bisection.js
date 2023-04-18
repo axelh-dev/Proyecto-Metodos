@@ -46,7 +46,8 @@ document
       fb.toFixed(6);
 
       if (fa * fb >= 0) {
-        alert("La función no cambia de signo en el intervalo dado");
+        var miModal = new bootstrap.Modal(document.getElementById('miModal'));
+        miModal.show();
       } else {
         /* Calculamos la recurrencia */
         let xr = (a + b) / 2;

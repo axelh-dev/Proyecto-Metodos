@@ -44,14 +44,14 @@
     </label>
     <div class="seccion-inputs mt-2">
       <label for="xo" class="">Xo:
-        <input type="number" id="xo" name="xo"><br>
+        <input type="text" pattern="[0-9]+(\.[0-9]+)?" id="xo" name="xo"><br>
       </label>
       <label for="xi" class="ms-2">X1:
-        <input type="number" id="xi" name="xi"><br>
+        <input type="text" pattern="[0-9]+(\.[0-9]+)?" id="xi" name="xi"><br>
       </label>
     </div>
     <label for="tolerance" class="mt-3">Tolerancia:
-      <input type="number" id="tolerance" name="tolerance" step="0.000001" min="0.000001" max="0.001"><br>
+      <input type="text" pattern="[0-9]+(\.[0-9]+)?" id="tolerance" name="tolerance" step="0.000001" min="0.000001" max="0.001"><br>
     </label>
     <button type="submit" class="btn btn-primary mt-2">Calcular</button>
   </form>

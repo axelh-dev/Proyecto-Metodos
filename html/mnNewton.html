@@ -46,14 +46,33 @@
     <div class="seccion-inputs mt-2">
 
       <label for="xi" class="ms-2">xi:
-        <input type="number" id="xi" name="xi"><br>
+        <input type="text" pattern="[0-9]+(\.[0-9]+)?" id="xi" name="xi"><br>
       </label>
       <label for="tolerance" class="ms-2">Tolerancia:
-        <input type="number" id="tolerance" name="tolerance" step="0.000001" min="0.000001" max="0.001"><br>
+        <input type="number" id="tolerance" name="tolerance" step="0.000001" max="0.001"><br>
       </label>
     </div>
-    
+
     <button type="submit" class="btn btn-primary mt-2">Calcular</button>
+
+    <div class="modal fade" id="miModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Mensaje</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+           No pudo encontrar la raíz de la función 
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  
 
   </form>
   <div id="results">

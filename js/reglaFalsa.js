@@ -2,7 +2,7 @@ document
   .getElementById("regla-falsa-form")
   .addEventListener("submit", function (event) {
     event.preventDefault();
- 
+
     // Obtener los valores de los campos del formulario
     const equation = document.getElementById("equation").value;
     const a = parseFloat(document.getElementById("a").value);
@@ -12,13 +12,13 @@ document
     /* Llamamos nuestro metodo y le pasamos los valores que vienen de los imputs */
     let resultados = rgFalsa(equation, a, b, tolerance);
 
-    // Aca limpiamos la tabla antes de mandar nuevos valores a ella 
+    // Aca limpiamos la tabla antes de mandar nuevos valores a ella
     const tabla = document.getElementById("tabla-resultados");
     const filas = tabla.rows;
     const numFilas = filas.length;
     for (let i = numFilas - 1; i > 0; i--) {
       tabla.deleteRow(i);
-    } 
+    }
 
     const tablaResultados = document.getElementById("tabla-resultados");
 
@@ -46,10 +46,11 @@ document
       fb.toFixed(6);
 
       if (fa * fb >= 0) {
-        alert("La función no cambia de signo en el intervalo dado");
+        var miModal = new bootstrap.Modal(document.getElementById("miModal"));
+        miModal.show();
       } else {
         /* Calculamos la recurrencia */
-        let xr = (a*fb - b*fa) / (fb - fa);;
+        let xr = (a * fb - b * fa) / (fb - fa);
         xr.toFixed(6);
 
         /* Sustituimos recurrencia en nuestra ecuacion */
@@ -85,7 +86,7 @@ document
 
           xrAnterior = xr; // actualizamos xrAnterior con el valor actual de xr
 
-          xr = (a*fb - b*fa) / (fb - fa);;
+          xr = (a * fb - b * fa) / (fb - fa);
           fxr = math.evaluate(funcion, { x: xr });
           fxr.toFixed(6);
 
@@ -94,6 +95,13 @@ document
           const diffXr = Math.abs(xr - xrAnterior); // calculamos la diferencia entre xr actual y xr anterior
           toll = diffXr; // actualizamos la tolerancia con la diferencia de xr
           toll.toFixed(6);
+          if (iteracion > 20) {
+            var miModal = new bootstrap.Modal(
+              document.getElementById("miModal")
+            );
+            miModal.show();
+            break;
+          }
         }
         resultados.push([
           iteracion,
