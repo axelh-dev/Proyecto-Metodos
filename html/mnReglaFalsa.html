@@ -19,7 +19,7 @@
       /* Combinar bordes de celdas adyacentes */
     }
 
-    .table  th,
+    .table th,
     .table td {
       /* Agregar bordes a las celdas */
       padding: 8px;
@@ -51,12 +51,12 @@
       </label>
     </div>
     <label for="tolerance" class="mt-3">Tolerancia:
-      <input type="text" pattern="[0-9]+(\.[0-9]+)?" id="tolerance" name="tolerance" step="0.000001" min="0.000001" max="0.001"><br>
+      <input type="number" id="tolerance" name="tolerance" step="0.000001" min="0.000001" max="0.001"><br>
     </label>
     <button type="submit" class="btn btn-primary mt-2">Calcular</button>
   </form>
 
-  
+
   <div class="modal fade" id="miModal" tabindex="-1">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -73,7 +73,7 @@
       </div>
     </div>
   </div>
-  
+
 
   <div id="results">
     <table id="tabla-resultados" class="table mt-2 table-striped table-hover mb-5">
@@ -83,7 +83,7 @@
           <th scope="col">a</th>
           <th scope="col">b</th>
           <th scope="col">f(a)</th>
-          <th scope="col">f(b)</th> 
+          <th scope="col">f(b)</th>
           <th scope="col">xr</th>
           <th scope="col">f(xr)</th>
           <th scope="col">Tolerancia</th>
