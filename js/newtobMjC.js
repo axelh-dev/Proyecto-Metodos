@@ -37,12 +37,19 @@ function metodoNewtonMejorado(Cons1, Cons2, funcion, toleran) {
 
       // Remplazamos X en nuestra Ecuacion derivada por dos
       let fdxi = math.evaluate(Fder2, { x: Valores[i] });
-      console.log(Valores[i]);
+
+      let ocur = Valores[i] - (fxi * fdx) / (Math.pow(fdx, 2) - fdx * fdxi);
+      let i = 0;
+      let tabla = document.createElement("table");
+
       while (Math.abs(fxi) > toleran) {
-        
+        let fila = document.createElement("tr");
+        let celda1 = document.createElement("td");
+        let celda2 = document.createElement("td");
+        i++;
       }
+      results.appendChild(tabla);
     }
-    
 
     prevResult = currentResult;
     preIter = Valores[i];
@@ -63,9 +70,7 @@ function rangoValores(val1, val2) {
   return rango;
 }
 
-
-
 //} else {
-    //   var miModal = new bootstrap.Modal(document.getElementById("miModal"));
-    //   miModal.show();
-    // }
+//   var miModal = new bootstrap.Modal(document.getElementById("miModal"));
+//   miModal.show();
+// }

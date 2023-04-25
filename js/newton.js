@@ -44,7 +44,11 @@ document
 
       // Convertimos el objeto Node a una cadena de texto
       let eqDerStr = eqDer.toString();
+      let eqDere = math.derivative(eqDerStr, "x");
+      let eqDerStr2 = eqDere.toString();
 
+      console.log(eqDerStr2)
+      console.log(eqDerStr)
       // Remplazamos X en nuestra Ecuacion normal
       let fxi = math.evaluate(funcion, { x: xi });
 
@@ -71,9 +75,7 @@ document
           toll.toFixed(6),
         ]); // guardamos los resultados
 
-        if(iteracion > 15){
-          break;
-        }
+        
         xi = xr;
 
         recAnterior = xr; // actualizamos xrAnterior con el valor actual de xr
