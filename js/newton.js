@@ -41,9 +41,9 @@ document
 
       // Obtenemos la derivada de nuestra funcion devulve una funcion tipo node
       let eqDer = math.derivative(funcion, "x");
+      let eqDerStr = eqDer.toString();
 
       // Convertimos el objeto Node a una cadena de texto
-      let eqDerStr = eqDer.toString();
       let eqDere = math.derivative(eqDerStr, "x");
       let eqDerStr2 = eqDere.toString();
 

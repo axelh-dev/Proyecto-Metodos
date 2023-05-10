@@ -62,7 +62,7 @@ document
 
         /* creamos un ciclo que va a calcular cada iteracion y la va a guardar en un arreglo */
         let xrAnterior = 0;
-        while (Math.abs(fxr) > tolerance) {
+        while (Math.abs(fxr) >= tolerance) {
           resultados.push([
             iteracion,
             a.toFixed(6),
