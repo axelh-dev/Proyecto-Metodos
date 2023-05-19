@@ -76,10 +76,10 @@ document
       var error = Math.abs((x3 - x2) / x3);
 
       let iteracion = 1;
-      while (error >= tolerance) {
+      while (error > tolerance) {
         resultados.push([
           iteracion,
-          xo.toFixed(6),
+          x0.toFixed(6),
           x1.toFixed(6),
           x2.toFixed(6),
           fxo.toFixed(6),
@@ -129,7 +129,7 @@ document
         iteracion++;      }
       resultados.push([
         iteracion,
-        xo.toFixed(6),
+        x0.toFixed(6),
         x1.toFixed(6),
         x2.toFixed(6),
         fxo.toFixed(6),
